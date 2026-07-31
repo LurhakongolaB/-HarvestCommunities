@@ -72,7 +72,7 @@ export default function Volunteer() {
       <div style={{ flex: 1, height: '100%', position: 'relative' }}>
         {/* Make sure to add an image named 'volunteer.jpg' to your public/images folder! */}
         <img 
-          src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1200&q=80" 
+          src="/images/Leadership.jpeg" 
           alt="Volunteers helping community" 
           style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
         />

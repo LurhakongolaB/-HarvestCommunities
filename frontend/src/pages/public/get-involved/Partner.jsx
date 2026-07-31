@@ -40,7 +40,7 @@ export default function Partner() {
       {/* Image Div */}
       <div style={{ flex: 1, height: '100%', position: 'relative' }}>
         <img 
-          src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80" 
+          src="/images/education.jpeg" 
           alt="Community Partnership" 
           style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
         />
