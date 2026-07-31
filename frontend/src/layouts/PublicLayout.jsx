@@ -186,7 +186,7 @@ export default function PublicLayout() {
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '40px' }}>
           <div>
-            <img src="/images/suhacoLogo.jpeg" alt="SUHACO" style={{ height: '150px', marginBottom: '15px', filter: 'brightness(0) invert(1)' }} />
+            <img src="/images/suhacoLogo.jpeg" alt="SUHACO" style={{ height: '100px', marginBottom: '15px', borderBottomRightRadius: '70%', borderEndEndRadius: '70%', borderStartEndRadius: '70%', borderBottomLeftRadius: '70%',borderTopLeftRadius:'70%', background:'transparent', overflow: 'hidden' }} />
             <p style={{ color: '#9ca3af', lineHeight: '1.6' }}>Sustainable Harvest Communities<br/>Empowering refugees and vulnerable communities through sustainable development.</p>
           </div>
           <div>
@@ -203,8 +203,8 @@ export default function PublicLayout() {
             <p style={{ color: '#9ca3af', lineHeight: '1.8' }}>
                Kakuma Refugee Camp<br/>
               Turkana County, Kenya<br/>
-               info@suhaco.org<br/>
-               +254 700 000 000
+               sustainableharvestcommunities@gmail.com<br/>
+               +254 114111094
             </p>
           </div>
         </div>
