@@ -17,7 +17,7 @@ export default function WomenEmpowerment() {
       </div>
       {/* Image Div */}
       <div style={{ flex: 1, height: '100%', position: 'relative' }}>
-        <img src="/images/women.jpeg" alt="Women Empowerment" style={{ width: '100%', height: '100%', paddingLeft: '10px',paddingBottom: '100px',paddingTop: '50px', paddingRight:'30px', objectFit: 'cover'  }} />
+        <img src="/images/womeEmpowerment.jpg" alt="Women Empowerment" style={{ width: '100%', height: '100%', paddingLeft: '10px',paddingBottom: '100px',paddingTop: '50px', paddingRight:'30px', objectFit: 'cover'  }} />
       </div>
     </div>
   );

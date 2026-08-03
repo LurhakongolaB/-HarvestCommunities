@@ -17,7 +17,7 @@ export default function Education() {
       </div>
       {/* Image Div */}
       <div style={{ flex: 1, height: '100%', position: 'relative' }}>
-        <img src="/public/images/education.jpeg" alt="Education Programs" style={{ width: '100%', height: '100%', paddingLeft: '20px',paddingBottom: '120px',paddingTop: '50px', paddingRight:'30px', objectFit: 'cover'  }} />
+        <img src="/public/images/childFriendly.jpeg" alt="Education Programs" style={{ width: '100%', height: '100%', paddingLeft: '20px',paddingBottom: '120px',paddingTop: '50px', paddingRight:'30px', objectFit: 'cover'  }} />
       </div>
     </div>
   );
