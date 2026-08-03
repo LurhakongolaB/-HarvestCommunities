@@ -4,7 +4,7 @@
 
 .home {
     width: 100%;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-x: hidden; /* CRITICAL FIX: Changed to overflow-x so vertical scrolling works! */
     color: #1f2937;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
@@ -12,20 +12,19 @@
 /* =====================================
    HERO (Desktop)
 ===================================== */
-
-.hero {
-    min-height: calc(100vh - 86px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* CRITICAL: Keeps text and image apart */
-    gap: 40px; /* CRITICAL: Adds space between text and image */
-    padding: 40px 6%;
-    background: white;
+.hero{
+    width:100%;
+    height:calc(100vh - 86px);
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:#fff;
 }
 
 .hero-content {
     flex: 1;
     max-width: 600px; /* Prevents text from stretching too far */
+    margin-left: 70px;
 }
 
 .hero-tag {
@@ -100,21 +99,24 @@
     color: white;
 }
 
-.hero-image {
+.hero-image{
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 80px;   /* Adjust 10–30px as needed */
+    margin-bottom: 50px;
 }
 
 .hero-image img {
     width: 100%;
     max-width: 500px;
     height: auto; /* CRITICAL: Let image scale naturally */
-    max-height: 600px; /* Prevents it from being too tall */
+    max-height: 500px; /* Prevents it from being too tall */
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0,0,0,.15);
+    margin-top: 80px;
+    margin-bottom: 50px;
 }
 
 /* =====================================
@@ -257,32 +259,37 @@
 ===================================== */
 
 @media(max-width: 992px) {
-    
+      
     /* HERO MOBILE FIX */
     .hero {
-        flex-direction: column; /* CRITICAL: Stacks text and image vertically! */
+        flex-direction: column; 
         text-align: center;
-        padding: 60px 5% 40px;
-        min-height: auto;
-        gap: 40px;
+        padding: 40px 5% 60px; /* More padding at the bottom for the image */
+        min-height: auto; /* CRITICAL FIX: Stops forcing a fixed screen height */
+        height: auto;
+        gap: 30px;
     }
+    /* ... keep the rest of the mobile styles below this ... */
 
     .hero-content {
         max-width: 100%;
     }
 
-    .hero h1 {
-        font-size: 38px; /* Smaller text on mobile */
-    }
+   .hero h1{
+    font-size:40px;
+    line-height:1.15;
+    margin-bottom:15px;
+}
 
-    .hero p {
-        font-size: 16px;
-        margin: 0 auto; /* Centers the paragraph */
-    }
-
+.hero p{
+    font-size:17px;
+    margin-bottom:20px;
+    line-height:1.7;
+}
     .hero-buttons {
         justify-content: center; /* CRITICAL: Centers the buttons! */
         width: 100%;
+        
     }
 
     .hero-image {
@@ -355,9 +362,24 @@
     .hero-buttons {
         flex-direction: column; /* Stacks buttons vertically on very small screens */
         width: 100%;
+    margin-top:20px;
+
     }
 
     .primary-btn, .secondary-btn {
         width: 100%; /* Makes buttons full width on phones */
     }
+}
+
+.hero-container{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    align-items: flex-start;
+    justify-content:space-between;
+    gap:50px;
+    padding:0 6%;
+    box-sizing:border-box;
+    margin-bottom: 80;
 }
