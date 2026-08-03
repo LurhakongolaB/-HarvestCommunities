@@ -1,0 +1,99 @@
+/* --- Desktop Styles (Default) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2c5530; /* SUHACO Green */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar-logo a {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #f4a261; /* Accent Orange */
+}
+
+.admin-link {
+  background-color: #f4a261;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: white !important;
+}
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+/* --- Mobile Styles (Screens smaller than 768px) --- */
+@media (max-width: 768px) {
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide menu by default, make it slide in from the left */
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px; /* Adjust this if your navbar is taller/shorter */
+    flex-direction: column;
+    background-color: #2c5530;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.2);
+    padding: 2rem 0;
+    gap: 2rem;
+  }
+
+  /* Show menu when active */
+  .nav-menu.active {
+    left: 0;
+  }
+
+  /* Animate hamburger into an 'X' when clicked */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

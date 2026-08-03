@@ -1,99 +1,214 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import '../../styles/home.css'
 
 export default function HomePage() {
-  const navigate = useNavigate();
+
+  const navigate = useNavigate()
+
+  const programs = [
+    {
+      icon: "🌱",
+      title: "Sustainable Agriculture",
+      description:
+        "Promoting climate-smart farming, poultry production and food security."
+    },
+    {
+      icon: "👩🏽‍🌾",
+      title: "Women Empowerment",
+      description:
+        "Supporting women through entrepreneurship, VSLA groups and skills development."
+    },
+    {
+      icon: "📚",
+      title: "Education",
+      description:
+        "Providing literacy, digital skills and educational opportunities."
+    },
+    {
+      icon: "🤝",
+      title: "Leadership",
+      description:
+        "Developing community leaders capable of creating lasting impact."
+    }
+  ]
 
   return (
-    <div>
-      {/* --- HERO SECTION (Split Layout) --- */}
-      <div style={{ display: 'flex', minHeight: '85vh', alignItems: 'center', background: '#ffffff' }}>
-        
-        {/* Left Div: Professional Statement */}
-        <div style={{ flex: 1, padding: '10px 5%', maxWidth: '700px' }}>
-          <span style={{ color: '#16a34a', fontWeight: '700', fontSize: '14px', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '10px', display: 'block' }}>
+
+    <main className="home">
+
+      {/* HERO */}
+
+      <section className="hero">
+
+        <div className="hero-content">
+
+          <span className="hero-tag">
             Sustainable Harvest Communities
           </span>
-          <h1 style={{ fontSize: '40px', fontWeight: '700', color: '#111827', lineHeight: '1.2', marginBottom: '25px' }}>
-            Empowering Communities Through <span style={{ color: '#16a34a' }}>Sustainable Harvest</span>
+
+          <h1>
+            Building
+            <span> Sustainable Communities </span>
+            Through Opportunity
           </h1>
-          <p style={{ fontSize: '18px', color: '#4b5563', lineHeight: '1.7', marginBottom: '35px' }}>
-            Operating in Kakuma Refugee Camp, SUHACO is dedicated to empowering refugees and vulnerable host communities. Rather than promoting dependency, we invest in practical solutions—like sustainable agriculture, VSLA, and women's empowerment—that strengthen self-reliance, resilience, and economic inclusion.
+
+          <p>
+
+            SUHACO empowers refugees and vulnerable host communities through
+            sustainable agriculture, education, women's empowerment,
+            entrepreneurship and community leadership.
+
           </p>
-          
-          <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
-            <button 
-              onClick={() => navigate('/get-involved/donate')} 
-              style={{ padding: '16px 32px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: 'pointer', boxShadow: '0 4px 6px rgba(22, 163, 74, 0.2)' }}
+
+          <div className="hero-buttons">
+
+            <button
+              className="primary-btn"
+              onClick={() => navigate('/get-involved/donate')}
             >
-              Support Our Mission
+              Donate Now
             </button>
-            <button 
-              onClick={() => navigate('/our-impact/all')} 
-              style={{ padding: '16px 32px', background: 'transparent', color: '#16a34a', border: '2px solid #16a34a', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: 'pointer' }}
+
+            <button
+              className="secondary-btn"
+              onClick={() => navigate('/about')}
             >
-              See Our Impact
+              Learn More
             </button>
-          </div>
-        </div>
 
-        {/* Right Div: Hero Image */}
-        <div style={{ flex: 1, height: '85vh', position: 'relative', overflow: 'hidden', background: '#f3f4f6' }}>
-          {/* Using a high-quality placeholder image related to agriculture/community. Replace this URL with your own image from /public/images/ */}
-          <img src="/images/poultry.jpeg" alt="Livelihood Programs" style={{ width: '100%', height: '100%', paddingLeft: '5px',paddingBottom: '50px',paddingTop: '30px', paddingRight:'50px', objectFit: 'cover' }} />
-          
-          {/* <img 
-            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80" 
-            alt="Community farming" 
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-          /> */}
-          {/* Optional overlay for better blending */} 
-          
-
-          <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(to right, #ffffff 0%, transparent 20%)' }}></div>
-        </div>
-      </div>
-
-      {/* --- CORE PILLARS SECTION --- */}
-      <div style={{ padding: '80px 5%', background: '#f9fafb' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-            <h2 style={{ fontSize: '36px', fontWeight: 'bold', color: '#111827', marginBottom: '10px' }}>Our Core Interventions</h2>
-            <p style={{ fontSize: '18px', color: '#6b7280', maxWidth: '700px', margin: '0 auto' }}>
-              We help individuals and families improve food security, increase household income, and create sustainable economic opportunities.
-            </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
-            {[
-              { icon: '🌱', title: 'Sustainable Agriculture', desc: 'Teaching modern, eco-friendly farming techniques, crop cultivation, and poultry reproduction to ensure long-term food security.' },
-              { icon: '💰', title: 'Economic Empowerment', desc: 'Facilitating Village Savings and Loan Associations (VSLA) and social entrepreneurship to build financial independence.' },
-              { icon: '📚', title: 'Education & Leadership', desc: 'Providing Adult Basic Education, literacy programs, and leadership development to equip communities with vital skills.' }
-            ].map((item, i) => (
-              <div key={i} style={{ background: 'white', padding: '20px 30px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.02)', border: '1px solid #e5e7eb', transition: 'transform 0.2s' }}>
-                <div style={{ fontSize: '48px', marginBottom: '20px' }}>{item.icon}</div>
-                <h3 style={{ fontSize: '22px', marginBottom: '15px', color: '#111827', fontWeight: '700' }}>{item.title}</h3>
-                <p style={{ color: '#4b5563', lineHeight: '1.7', fontSize: '15px', margin: 0 }}>{item.desc}</p>
+        </div>
+
+        <div className="hero-image">
+
+          <img
+            src="/images/poultry.jpeg"
+            alt="SUHACO"
+          />
+
+        </div>
+
+      </section>
+
+
+      {/* STATISTICS */}
+
+      <section className="stats">
+
+        <div>
+
+          <h2>1000+</h2>
+
+          <p>Community Members Reached</p>
+
+        </div>
+
+        <div>
+
+          <h2>50+</h2>
+
+          <p>Women Groups Supported</p>
+
+        </div>
+
+        <div>
+
+          <h2>20+</h2>
+
+          <p>Community Projects</p>
+
+        </div>
+
+        <div>
+
+          <h2>7+</h2>
+
+          <p>Years of Community Service</p>
+
+        </div>
+
+      </section>
+
+
+      {/* ABOUT */}
+
+      <section className="about-home">
+
+        <h2>Who We Are</h2>
+
+        <p>
+
+          Sustainable Harvest Communities (SUHACO) is a community-based
+          organization dedicated to promoting resilience, economic inclusion
+          and sustainable livelihoods among refugees and host communities
+          in Kakuma Refugee Camp and Turkana County.
+
+        </p>
+
+      </section>
+
+
+      {/* PROGRAMMES */}
+
+      <section className="programs">
+
+        <h2>Our Programmes</h2>
+
+        <div className="program-grid">
+
+          {programs.map((program,index)=>(
+
+            <div
+              key={index}
+              className="program-card"
+            >
+
+              <div className="icon">
+
+                {program.icon}
+
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* --- MISSION & VISION BANNER --- */}
-      <div style={{ background: '#16a34a', padding: '80px 5%', color: 'white', textAlign: 'center' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: 'bold', marginBottom: '20px' }}>Our Vision</h2>
-          <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '40px', opacity: 0.95 }}>
-            "We envision a resilient, self-reliant, and integrated society that promotes dignity and mutual community growth."
-          </p>
-          <button 
-            onClick={() => navigate('/about')} 
-            style={{ padding: '14px 32px', background: 'white', color: '#16a34a', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '700', cursor: 'pointer' }}
-          >
-            Learn More About Us
-          </button>
+              <h3>{program.title}</h3>
+
+              <p>{program.description}</p>
+
+            </div>
+
+          ))}
+
         </div>
-      </div>
-    </div>
-  );
+
+      </section>
+
+
+      {/* CTA */}
+
+      <section className="cta">
+
+        <h2>
+          Together We Can Transform Lives
+        </h2>
+
+        <p>
+
+          Join us by volunteering, partnering or donating to create lasting
+          change.
+
+        </p>
+
+        <button
+          className="primary-btn"
+          onClick={()=>navigate('/get-involved/donate')}
+        >
+          Support Our Mission
+        </button>
+
+      </section>
+
+    </main>
+
+  )
+
 }

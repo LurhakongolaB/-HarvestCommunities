@@ -17,6 +17,27 @@
   }
 }
 
+/* Default: Desktop styles (side-by-side) */
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Mobile styles: Screen width 768px or smaller (tablets and phones) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    padding: 1rem; /* Reduce padding on small screens */
+  }
+  
+  .text-heading {
+    font-size: 1.5rem; /* Make text slightly smaller on mobile */
+  }
+}
+
+
 .hero {
   position: relative;
 

@@ -1,0 +1,768 @@
+/* ==========================================================
+   GLOBAL LAYOUT
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color:#1f2937;
+    background:#ffffff;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+.public-layout{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+.main-content{
+    flex:1;
+}
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+.navbar{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:#fff;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:14px 6%;
+
+    border-bottom:1px solid #e5e7eb;
+
+    box-shadow:
+    0 3px 12px rgba(0,0,0,.05);
+
+}
+
+
+/* ==========================================================
+LOGO
+========================================================== */
+
+.navbar-logo{
+
+    display:flex;
+    align-items:center;
+
+    cursor:pointer;
+
+}
+
+.navbar-logo img{
+
+    width:auto;
+
+    height:75px;
+
+    object-fit:contain;
+
+    transition:.3s;
+
+}
+
+.navbar-logo img:hover{
+
+    transform:scale(1.04);
+
+}
+
+
+/* ==========================================================
+DESKTOP MENU
+========================================================== */
+
+.desktop-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.nav-btn{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    padding:10px 16px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#374151;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    transition:.25s;
+
+}
+
+.nav-btn:hover{
+
+    color:#16a34a;
+
+}
+
+.nav-btn.active{
+
+    color:#16a34a;
+
+}
+
+
+/* ==========================================================
+DONATE BUTTON
+========================================================== */
+
+.donate-btn{
+
+    background:#16a34a;
+
+    color:#fff;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:12px 24px;
+
+    border-radius:8px;
+
+    font-weight:700;
+
+    margin-left:10px;
+
+    transition:.25s;
+
+}
+
+.donate-btn:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ==========================================================
+DROPDOWN
+========================================================== */
+
+.dropdown-container{
+
+    position:relative;
+
+}
+
+.dropdown-menu{
+
+    position:absolute;
+
+    left:0;
+
+    top:110%;
+
+    width:250px;
+
+    background:#fff;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.15);
+
+    animation:dropdown .25s ease;
+
+}
+
+@keyframes dropdown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.dropdown-item{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    text-align:left;
+
+    padding:14px 20px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    color:#374151;
+
+}
+
+.dropdown-item:hover{
+
+    background:#f0fdf4;
+
+    color:#16a34a;
+
+}
+
+
+/* ==========================================================
+HAMBURGER
+========================================================== */
+
+.hamburger{
+
+    display:none;
+
+    flex-direction:column;
+
+    cursor:pointer;
+
+    gap:5px;
+
+}
+
+.bar{
+
+    width:28px;
+
+    height:3px;
+
+    background:#374151;
+
+    border-radius:3px;
+
+    transition:.3s;
+
+}
+
+.hamburger.active .bar:nth-child(1){
+
+    transform:
+    rotate(45deg)
+    translateY(11px);
+
+}
+
+.hamburger.active .bar:nth-child(2){
+
+    opacity:0;
+
+}
+
+.hamburger.active .bar:nth-child(3){
+
+    transform:
+    rotate(-45deg)
+    translateY(-11px);
+
+}
+
+
+/* ==========================================================
+MOBILE MENU
+========================================================== */
+
+.mobile-menu{
+
+    position:absolute;
+
+    top:100%;
+
+    left:0;
+
+    width:100%;
+
+    background:white;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .35s ease;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.mobile-menu.open{
+
+    max-height:100vh;
+
+}
+
+.mobile-nav-list{
+
+    list-style:none;
+
+}
+
+.mobile-nav-item{
+
+    border-bottom:
+
+    1px solid #ececec;
+
+}
+
+.mobile-nav-btn{
+
+    width:100%;
+
+    border:none;
+
+    background:white;
+
+    padding:18px 24px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    cursor:pointer;
+
+}
+
+.mobile-nav-btn.active{
+
+    color:#16a34a;
+
+}
+
+.mobile-dropdown{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .35s ease;
+
+    background:#fafafa;
+
+}
+
+.mobile-dropdown.open{
+
+    max-height:500px;
+
+}
+
+.mobile-dropdown-item{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    padding:14px 40px;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.mobile-dropdown-item:hover{
+
+    background:#f0fdf4;
+
+    color:#16a34a;
+
+}
+
+.mobile-donate-btn{
+
+    width:90%;
+
+    margin:25px auto;
+
+    display:block;
+
+    padding:14px;
+
+    border:none;
+
+    background:#16a34a;
+
+    color:white;
+
+    border-radius:8px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.footer{
+    background:#111827;
+    color:white;
+    margin-top:60px;
+}
+
+.footer-container{
+    max-width:1300px;
+    margin:auto;
+    padding:60px 6%;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:50px;
+}
+
+.footer-section h3{
+    margin-bottom:20px;
+    font-size:20px;
+    font-weight:700;
+}
+
+.footer-section p{
+    color:#d1d5db;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.footer-section button{
+    display:block;
+    border:none;
+    background:none;
+    color:#d1d5db;
+    cursor:pointer;
+    margin-bottom:12px;
+    font-size:15px;
+    transition:.25s;
+    text-align:left;
+}
+
+.footer-section button:hover{
+    color:#22c55e;
+}
+
+.footer-logo{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:20px;
+}
+
+.footer-bottom{
+    text-align:center;
+    padding:22px;
+    border-top:1px solid rgba(255,255,255,.12);
+    color:#9ca3af;
+    font-size:14px;
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:1024px){
+
+.navbar{
+
+    padding:12px 4%;
+
+}
+
+.desktop-menu{
+
+    gap:3px;
+
+}
+
+.nav-btn{
+
+    padding:8px 10px;
+
+    font-size:14px;
+
+}
+
+.donate-btn{
+
+    padding:10px 18px;
+
+}
+
+.footer-container{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+.navbar{
+
+    padding:12px 20px;
+
+    position:sticky;
+
+}
+
+.desktop-menu{
+
+    display:none;
+
+}
+
+.hamburger{
+
+    display:flex;
+
+}
+
+.navbar-logo img{
+
+    height:58px;
+
+}
+
+.mobile-menu{
+
+    position:absolute;
+
+    top:100%;
+
+    left:0;
+
+}
+
+.footer-container{
+
+    grid-template-columns:1fr;
+
+    gap:35px;
+
+    padding:50px 25px;
+
+}
+
+.footer-section{
+
+    text-align:center;
+
+}
+
+.footer-section button{
+
+    text-align:center;
+
+    width:100%;
+
+}
+
+.footer-logo{
+
+    margin:auto auto 20px;
+
+}
+
+}
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media (max-width:480px){
+
+.navbar{
+
+    padding:10px 16px;
+
+}
+
+.navbar-logo img{
+
+    height:50px;
+
+}
+
+.mobile-nav-btn{
+
+    padding:16px;
+
+    font-size:15px;
+
+}
+
+.mobile-dropdown-item{
+
+    padding:14px 30px;
+
+    font-size:14px;
+
+}
+
+.mobile-donate-btn{
+
+    width:92%;
+
+}
+
+.footer-container{
+
+    padding:40px 20px;
+
+}
+
+.footer-section h3{
+
+    font-size:18px;
+
+}
+
+.footer-section p{
+
+    font-size:14px;
+
+}
+
+.footer-bottom{
+
+    font-size:13px;
+
+}
+
+}
+
+/* ==========================================================
+   LARGE DESKTOPS
+========================================================== */
+
+@media (min-width:1600px){
+
+.navbar{
+
+    padding-left:10%;
+
+    padding-right:10%;
+
+}
+
+.footer-container{
+
+    max-width:1500px;
+
+}
+
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+button:focus-visible{
+
+    outline:3px solid #22c55e;
+
+    outline-offset:2px;
+
+}
+
+button{
+
+    transition:
+    background .25s,
+    color .25s,
+    transform .25s;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
