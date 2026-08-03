@@ -19,27 +19,31 @@ dotenv.config();
 const app = express();
 
 // CORS Configuration - Allow ALL localhost ports in development
-const allowedOrigins = process.env.NODE_ENV === 'production' 
-  ? [process.env.FRONTEND_URL] 
-  : [
-      'http://localhost:5173',
-      'http://localhost:5174', 
-      'http://localhost:5175',
-      'http://localhost:5176',
-      'http://localhost:5177', 'http://localhost:5181', 'http://localhost:5182',
-      'http://127.0.0.1:5173',
-      'http://127.0.0.1:5174',
-      'http://127.0.0.1:5175',
-      'http://127.0.0.1:5176',
-      'http://127.0.0.1:5177', 'http://127.0.0.1:5181', 'http://127.0.0.1:5182',
-      '*' // Allow all in dev mode
-    ];
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'http://127.0.0.1:5173',
+  'https://harvest-communities.vercel.app',
+  'https://www.suhaco.org',
+  'https://suhaco.org'
+];
 
 console.log('🔒 CORS allowed origins:', allowedOrigins);
 
 app.use(helmet());
-app.use(cors({ 
-  origin: allowedOrigins,
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps, curl, or Postman)
+    if (!origin) return callback(null, true);
+    
+    // Check if the origin is in our allowed list
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      console.log('❌ CORS blocked origin:', origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -51,6 +55,9 @@ const limiter = rateLimit({
   max: 100,
   message: 'Too many requests from this IP, please try again later.'
 });
+
+
+
 app.use('/api/', limiter);
 
 app.use(express.json({ limit: '10kb' }));
