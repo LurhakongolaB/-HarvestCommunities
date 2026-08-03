@@ -15,10 +15,10 @@ export default function Livelihood() {
           Our livelihood programs provide practical skills and resources to help community members achieve economic independence and food security.
         </p>
         <ul style={{ color: '#4b5563', lineHeight: '1.8', paddingLeft: '20px', margin: 0, fontSize: '16px' }}>
-          <li>Sustainable agriculture training</li>
-          <li>Poultry farming and livestock management</li>
-          <li>Crop cultivation techniques</li>
-          <li>Market linkage and value chains</li>
+          <li>- Sustainable agriculture training</li>
+          <li>- Poultry farming and livestock management</li>
+          <li>- Crop cultivation techniques</li>
+          <li>- Market linkage and value chains</li>
         </ul>
       </div>
     </div>

@@ -9,10 +9,10 @@ export default function WomenEmpowerment() {
           SUHACO is dedicated to empowering women through economic opportunities, skills training, and leadership development. We believe that when women thrive, entire communities benefit.
         </p>
         <ul style={{ color: '#4b5563', lineHeight: '1.8', paddingLeft: '20px', margin: 0, fontSize: '16px' }}>
-          <li>Village Savings and Loan Associations (VSLA)</li>
-          <li>Entrepreneurship training and mentorship</li>
-          <li>Leadership and advocacy skills</li>
-          <li>Access to microfinance opportunities</li>
+          <li>- Village Savings and Loan Associations (VSLA)</li>
+          <li>- Entrepreneurship training and mentorship</li>
+          <li>- Leadership and advocacy skills</li>
+          <li>- Access to microfinance opportunities</li>
         </ul>
       </div>
       {/* Image Div */}
