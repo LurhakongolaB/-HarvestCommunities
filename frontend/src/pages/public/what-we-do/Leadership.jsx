@@ -21,7 +21,7 @@ export default function Leadership() {
         }}
       >
         <img
-          src="/images/Leadership.jpeg"
+          src="/images/Leaders.jpeg"
           alt="Leadership Development"
           style={{
             width: '100%',
