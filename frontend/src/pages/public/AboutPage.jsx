@@ -11,10 +11,14 @@ export default function AboutPage() {
             About SUHACO
           </h1>
           <p style={{ fontSize: '20px', color: '#4b5563', lineHeight: '1.6', marginBottom: '30px' }}>
-            Sustainable Harvest Communities (SUHACO) is a registered Community-Based Organization (CBO) operating in Kakuma Refugee Camp, Turkana County, Kenya. Founded in 2023, SUHACO is committed to empowering refugees and vulnerable host communities through sustainable, community-led development.
+           About Sustainable Harvest Communities (SUHACO)
+
+Sustainable Harvest Communities (SUHACO) is a registered Community-Based Organization (CBO) operating in Kakuma Refugee Camp and Kalobeyei Settlement, Turkana County, Kenya. We are dedicated to empowering refugees and vulnerable host communities through education, women's and girls' empowerment, , and livelihood development.
+
+
           </p>
           <p style={{ fontSize: '18px', color: '#4b5563', lineHeight: '1.6', margin: 0 }}>
-            We believe that lasting change begins when communities are equipped with the knowledge, skills, and opportunities to build their own future. Rather than promoting dependency, we invest in practical solutions that strengthen self-reliance, resilience, and economic inclusion.
+            We believe that lasting change begins when individuals and communities have access to the knowledge, skills, resources, and opportunities they need to shape their own futures. Our approach focuses on practical, community-driven solutions that promote self-reliance, strengthen resilience, and create pathways towards sustainable livelihoods and economic inclusion.
           </p>
         </div>
 
